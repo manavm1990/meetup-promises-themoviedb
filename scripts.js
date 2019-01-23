@@ -10,4 +10,12 @@ movieResults
 
   // PROMISE CHAIN 'prettier' than 'nesting callbacks!'
   .then(movies => movies.results.forEach(movie => console.log(movie.title)))
-  .catch(error => console.error(`Error! ${error}`));
+
+  /**
+   * ES8 introduced finally()
+   * It will execute no matter what!
+   * It can be placed anywhere, but usually at end
+   */
+  .finally(() => console.log("finally!"))
+  .catch(error => console.error(`Error! ${error}`))
+  .finally(() => console.log("all done!"));
