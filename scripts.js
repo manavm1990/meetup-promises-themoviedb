@@ -14,4 +14,8 @@ const movieResults = Promise.all([
   ).then(response => response.json())
 ]);
 
-movieResults.then(response => console.log(response));
+movieResults.then(movieGroups =>
+  movieGroups.forEach(movieGroup =>
+    movieGroup.results.forEach(movie => console.log(movie.title))
+  )
+);
